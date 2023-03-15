@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp_Tarde_GitHub
 {
-    public class Endereço
+    public class Endereco
     {
         private int Id;
         private string CEP;
@@ -15,7 +15,7 @@ namespace ConsoleApp_Tarde_GitHub
         private string Bairro;
         private string Cidade;
 
-        public Endereço(int id, string cep, string rua, decimal numero, string bairro, string cidade)
+        public Endereco(int id, string cep, string rua, decimal numero, string bairro, string cidade)
         {
             Id = id;
             CEP = cep;
@@ -24,6 +24,18 @@ namespace ConsoleApp_Tarde_GitHub
             Bairro = bairro;
             Cidade = cidade;
                         
+        }
+
+        public void AtualizarEndereco(string rua, int numero, string bairro)
+        {
+            setBairro(bairro);
+            setNumero(numero);
+            setRua(rua);
+        }
+
+        public string EnderecoCompleto()
+        {
+            return "Rua " + Rua + ", Nº" + Numero + " Bairro " + Bairro + " Cidade: " + Cidade;
         }
 
         public int getId()
